@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewData["Title"] = "Campaign Details";
+    @model IEnumerable< DKInterviewAssignment.Models.CampaingDetalis>
+}
+<div class="page-wrapper-inside">
+    <div class="groups">
+        <div class="group-wrapper">
+            <h1 class="group-title">Campaign Details </h1>
+            <div class="group">
+                <div class="blocks-wrapper row">
+                    <h1 class="intranet-group-title">Overview</h1>
+                    <table class="table full-width">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Total Amount</th>
+                                <th>Backers count </th>
+                                <th>End Date </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@Html.DisplayFor(modelItem =>item.title)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.totalAmount)</td>
+                                    <td> @Html.DisplayFor(modelItem => item.backersCount)</td>
+                                    <td> @Html.DisplayFor(modelItem => item.endDate)</td>
+
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
